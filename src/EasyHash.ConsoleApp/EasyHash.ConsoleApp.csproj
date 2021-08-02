@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\EasyHash\EasyHash.csproj" />
+      <ProjectReference Include="..\EasyHash\EasyHash.csproj" />
     </ItemGroup>
 
 </Project>
