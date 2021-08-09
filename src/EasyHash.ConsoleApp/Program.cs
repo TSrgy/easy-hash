@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using CommandLine;
 
 namespace EasyHash.ConsoleApp
@@ -17,7 +18,7 @@ namespace EasyHash.ConsoleApp
         static void Main(string[] args)
         {
             Parser.Default.ParseArguments<Options>(args)
-                .WithParsed(o =>
+                .WithParsed(async o =>
                 {
                     var cracker = new Cracker(o.Path, (s) =>
                     {
@@ -29,12 +30,14 @@ namespace EasyHash.ConsoleApp
 
                     try
                     {
-                        var result = cracker.FindPassword();
+                        var result = await cracker.FindPassword("123tes");
                         Console.WriteLine(result);
+                        Console.WriteLine("THE END");
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e);
+                        Console.WriteLine(e.Message);
+                        Console.WriteLine(e.StackTrace);
                     }
                 });
         }

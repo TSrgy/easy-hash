@@ -5,4 +5,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="ILGPU" Version="1.0.0-beta3" />
+      <PackageReference Include="ILGPU.Algorithms" Version="1.0.0-beta3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EasyHash.Algorithms\EasyHash.Algorithms.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Extensions" />
+    </ItemGroup>
+
 </Project>
